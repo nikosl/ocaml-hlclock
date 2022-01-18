@@ -5,9 +5,9 @@ description: "Hybrid Logical Clocks"
 maintainer: ["Nikos Leivadaris"]
 authors: ["Nikos Leivadaris"]
 license: "ISC"
-homepage: "https://github.com/nikosl/hlclock"
-doc: "https://nikosl.github.io/hlclock/"
-bug-reports: "https://github.com/nikosl/hlclock/issues"
+homepage: "https://github.com/nikosl/ocaml-hlclock"
+doc: "https://nikosl.github.io/ocaml-hlclock/"
+bug-reports: "https://github.com/nikosl/ocaml-hlclock/issues"
 depends: [
   "ocaml" {>= "4.08.0"}
   "dune" {>= "2.9"}
@@ -33,4 +33,4 @@ build: [
   ]
   ["dune" "install" "-p" name "--create-install-files" name]
 ]
-dev-repo: "git+https://github.com/nikosl/hlclock.git"
+dev-repo: "git+https://github.com/nikosl/ocaml-hlclock.git"

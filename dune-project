@@ -2,10 +2,10 @@
 
 (name hlclock)
 
-(documentation "https://nikosl.github.io/hlclock/")
+(documentation "https://nikosl.github.io/ocaml-hlclock/")
 
 (source
- (github nikosl/hlclock))
+ (github nikosl/ocaml-hlclock))
 
 (license ISC)
 
