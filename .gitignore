@@ -1,6 +1,7 @@
 # Dune generated files
 _build/
 *.install
+_coverage/
 
 # Merlin configuring file for Vim and Emacs
 .merlin
