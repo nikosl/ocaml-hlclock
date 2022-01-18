@@ -1,5 +1,3 @@
-# 0.1.0 - 2020-01-01
+### v0.1.0-alpha (2022-01-18)
 
-## Added
-
-- Initial release
+* Initial alpha release
