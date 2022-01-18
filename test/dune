@@ -1,0 +1,4 @@
+(tests
+ (names hlclock_test)
+ (package hlclock)
+ (libraries qcheck qcheck-alcotest alcotest hlclock))

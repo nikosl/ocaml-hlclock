@@ -1,0 +1,6 @@
+(library
+ (name hlclock)
+ (public_name hlclock)
+ (libraries unix)
+ (instrumentation
+  (backend bisect_ppx)))

@@ -1,0 +1,69 @@
+opam-version: "2.0"
+name: "hlclock"
+version: "~dev"
+synopsis: "Hybrid Logical Clocks"
+description: "Hybrid Logical Clocks"
+maintainer: "Nikos Leivadaris"
+authors: "Nikos Leivadaris"
+license: "ISC"
+homepage: "https://github.com/nikosl/hlclock"
+doc: "https://nikosl.github.io/hlclock/"
+bug-reports: "https://github.com/nikosl/hlclock/issues"
+depends: [
+  "alcotest" {= "1.5.0" & with-test}
+  "astring" {= "0.8.5" & with-test}
+  "base-bigarray" {= "base"}
+  "base-bytes" {= "base" & with-test}
+  "base-threads" {= "base"}
+  "base-unix" {= "base"}
+  "bisect_ppx" {= "2.7.0" & with-test}
+  "cmdliner" {= "1.0.4" & with-test}
+  "cppo" {= "1.6.8" & with-doc}
+  "dune" {= "2.9.1"}
+  "fmt" {= "0.9.0" & with-test}
+  "fpath" {= "0.7.3" & with-doc}
+  "logs" {= "0.7.0" & with-doc}
+  "ocaml" {= "4.12.0"}
+  "ocaml-compiler-libs" {= "v0.12.4" & with-test}
+  "ocaml-config" {= "2"}
+  "ocaml-migrate-parsetree" {= "2.3.0" & with-doc}
+  "ocaml-syntax-shims" {= "1.0.0" & with-test}
+  "ocaml-system" {= "4.12.0"}
+  "ocamlbuild" {= "0.14.0" & with-test}
+  "ocamlfind" {= "1.9.1" & with-test}
+  "odoc" {= "2.0.2" & with-doc}
+  "odoc-parser" {= "1.0.0" & with-doc}
+  "ounit2" {= "2.2.4" & with-test}
+  "ppx_derivers" {= "1.2.1" & with-test}
+  "ppxlib" {= "0.24.0" & with-test}
+  "qcheck" {= "0.18" & with-test}
+  "qcheck-alcotest" {= "0.18" & with-test}
+  "qcheck-core" {= "0.18" & with-test}
+  "qcheck-ounit" {= "0.18" & with-test}
+  "re" {= "1.10.3" & with-test}
+  "result" {= "1.5" & with-doc}
+  "seq" {= "base" & with-test}
+  "sexplib0" {= "v0.14.0" & with-test}
+  "stdlib-shims" {= "0.3.0" & with-test}
+  "topkg" {= "1.0.4" & with-test}
+  "tyxml" {= "4.5.0" & with-doc}
+  "uchar" {= "0.0.2" & with-test}
+  "uutf" {= "1.0.2" & with-test}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "--promote-install-files=false"
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["dune" "install" "-p" name "--create-install-files" name]
+]
+dev-repo: "git+https://github.com/nikosl/hlclock.git"
